@@ -1,25 +1,18 @@
-name: "Deploy to Skynet"
-description: "Deploy your static webapp to Skynet"
+name: "Print action version to console"
+description: "Prints this Action's Version number to console."
 branding:
-  icon: "cloud"
-  color: "green"
+  icon: "check-circle"
+  color: "gray-dark"
 inputs:
-  upload-dir:
-    description: "Directory to upload"
-    required: true
+  input-example:
+    description: "This is a placeholder for an input. It will print to console too."
+    default: "Default Input Text"
   github-token:
     description: "Github token used for including the skylink url in pull request"
     required: true
-  registry-seed:
-    description: "Seed that generates registry private key (optional, only if you want to update the registry entry with skylink)"
-  registry-datakey:
-    description: "Registry datakey to use when updating the registry entry"
-    default: "skylink.txt"
 outputs:
-  skylink:
-    description: "Uploaded resource skylink"
-  skylink-url:
-    description: "Uploaded resource skylink url on https://siasky.net"
+  version:
+    description: "What we will tag and release this version as."
 runs:
   using: "node12"
   main: index.js
